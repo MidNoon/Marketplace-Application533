@@ -7,4 +7,7 @@ Video: ****
 Name: Stephanie Graessle
 Link: https://firebase.google.com/docs/android/setup
 Video: [contains video on webpage above]
-
+--------------
+Name: Cole Schemel
+Link: https://www.raywenderlich.com/5114-firebase-tutorial-for-android-getting-started
+Video: https://www.youtube.com/watch?v=dRYnm_k3w1w
