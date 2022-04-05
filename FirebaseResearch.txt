@@ -4,3 +4,7 @@ Name: ****
 Link: ****
 Video: ****
 --------------
+Name: Stephanie Graessle
+Link: https://firebase.google.com/docs/android/setup
+Video: [contains video on webpage above]
+
