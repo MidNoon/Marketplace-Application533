@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "230612723124",
+    "project_id": "marketplace-aplo5",
+    "storage_bucket": "marketplace-aplo5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230612723124:android:9fb42f334614484895fee1",
+        "android_client_info": {
+          "package_name": "com.example.marketplaceaplo5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230612723124-8p5fktsf3i05rmmoamhg1ah60jsnknpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marketplaceaplo5",
+            "certificate_hash": "cc34ce33dee94b6e208351e01b23dc6aaa705cd9"
+          }
+        },
+        {
+          "client_id": "230612723124-2nfiu3cms1gr1pme4fplc2tfigv5t4e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcK3Bq8d6t8lt21ThtUEzp4OD5ThgEEfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230612723124-2nfiu3cms1gr1pme4fplc2tfigv5t4e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
