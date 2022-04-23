@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ItemPurchaseActivity">
 
-<!--    This is where the user goes when they click on purchase in the -->
+<!--    This is where the user goes when they click on purchase in the detailedview browse fragment-->
 
 </RelativeLayout>
