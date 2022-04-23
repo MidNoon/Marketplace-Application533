@@ -6,22 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_margin="10dp">
+    <!--    This Activity is only shown to users that are logged in
+        This Activity is an Intersection for the major parts of the app
+        Buttons on this app:
+            Item Browse -> Takes user to BrowseActivity
+            Manage Items -> Takes user to the ItemActivity
+            View Invoices -> Takes user to the InvoiceActivity
+            Manage Profile -> Takes user to ProfileManageActivity
+            Logout -> ACTION -> LOGS USER OUT
+    -->
 
     <TextView
         android:id="@+id/text_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Page!"
+        android:layout_above="@+id/button_main_browse"
+        android:text="Main Menu"
         android:layout_centerInParent="true"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         />
 
+
     <Button
-        android:id="@+id/btnlogout"
+        android:id="@+id/button_main_browse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_welcome"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:text="Browse Items" />
+
+    <Button
+        android:id="@+id/button_main_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_main_browse"
+        android:layout_marginTop="10dp"
+        android:text="Item Management" />
+
+    <Button
+        android:id="@+id/button_main_invoices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_main_item"
+        android:layout_marginTop="10dp"
+        android:text="View Invoices" />
+
+    <Button
+        android:id="@+id/button_main_profilemanage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_main_invoices"
+        android:layout_marginTop="10dp"
+        android:text="Manage Profile" />
+
+    <Button
+        android:id="@+id/button_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/button_main_profilemanage"
         android:text="Log Out"/>
 
 </RelativeLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.marketplaceaplo5">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketplaceAplo5">
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".ItemActivity" />
+
+        <activity android:name=".USoldItemsActivity" />
+        <activity android:name=".UViewItemsActivity" />
+        <activity android:name=".UAddItemActivity" />
+        <activity android:name=".ProfileManageActivity" />
+        <activity android:name=".ItemPurchaseActivity" />
+        <activity android:name=".ItemManagementActivity" />
         <activity android:name=".InvoiceActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".CartActivity" />
         <activity android:name=".BrowseActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity" />

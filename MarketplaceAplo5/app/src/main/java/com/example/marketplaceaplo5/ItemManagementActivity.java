@@ -7,14 +7,14 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class BrowseActivity extends AppCompatActivity {
+public class ItemManagementActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse);
+        setContentView(R.layout.activity_item_managment);
         mAuth = FirebaseAuth.getInstance();
     }
     @Override
@@ -22,7 +22,7 @@ public class BrowseActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser == null) {
-            startActivity(new Intent(BrowseActivity.this, LoginActivity.class));
+            startActivity(new Intent(ItemManagementActivity.this, LoginActivity.class));
         }
     }
 }

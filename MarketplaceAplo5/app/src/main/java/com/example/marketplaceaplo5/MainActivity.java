@@ -11,18 +11,28 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private Button btnLogout;
+    private Button button_logout;
+    private Button button_main_browse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-        btnLogout = findViewById(R.id.btnlogout);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        button_logout = findViewById(R.id.button_logout);
+        button_main_browse = findViewById(R.id.button_main_browse);
+
+        button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();
+            }
+        });
+
+        button_main_browse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BrowseActivity.class));
             }
         });
     }

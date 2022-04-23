@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    This Activity is only shown to users that are logged in
+        This Activity is an Intersection for the major parts of the app
+        Buttons on this app:
+            Item Browse -> Takes user to BrowseActivity
+            Manage Items -> Takes user to the ItemActivity
+            View Invoices -> Takes user to the InvoiceActivity
+            Edit Profile -> Takes user to ProfileManageActivity
+
+        -->
+
+</RelativeLayout>

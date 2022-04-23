@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailBrowseFragment">
+
+    <!-- TODO: Update blank fragment layout
+        This Fragment will display when a user clicks an item in BROWSE
+        It will take them to a detailed view of the item they clicked on
+        Information that will be displayed:
+            Item Name
+            Item Description
+            Item Image
+            Date Posted
+            Selling User
+            Price
+
+        We will have a go back button that returns the user to BROWSE
+        We will have a purchase button that takes user to PURCHASE
+    -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</FrameLayout>

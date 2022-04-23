@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemManagementActivity">
+
+<!--    This Activity is a Management Activity for Items
+        Item Database Information Guide:
+            Item Name
+            Item Description
+            Item Image
+            Price
+            Selling User
+            Date Listed
+            Buying User
+            Date Bought
+            isSold
+            **isPaid
+            **isDelivered
+
+        Intersection Guide:
+            UAddItemActivity -> Activity for a User to add a new item to sell
+                                NOTES:  This activity will create an entry into the database for an item
+                                        Information Required from User:
+                                            Item Name
+                                            Item Description
+                                            Item Image
+                                            Price
+                                        Information we insert automatically:
+                                            Selling User
+                                            Date Listed
+                                            isSold = 0
+                                            **isPaid = 0
+                                            **isDelivered = 0
+
+            UViewItemsActivity ->   Activity that displays the users currently unsold items
+                               ->   ACTION ->   RemoveItem ->   Allows user to remove an unsold item from list
+                                    NOTES:  This activity should work similar in nature to the BrowseActivity but only items where
+                                            Selling User = current user and with isSold = 0
+                                            Clicking on an item though show bring a detailedview type fragment with the ability to remove the item
+
+            USoldItemsActivity ->   Activity that displays items that the user has sold
+                                    NOTES:  This activity should work similar in nature to the BrowseActivity but only items where
+                                            Selling User = current user and with isSold = 1
+
+            UBoughtItemsActivity -> Activity that displays items that the user has bought
+                                    NOTES:  This activity should work similar in nature to the BrowseActivity but only items where
+                                            Buying User = current user and with isSold = 1
+
+-->
+
+
+</RelativeLayout>

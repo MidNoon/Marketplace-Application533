@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    ***Place holder we will probably make this a fragment***
+        What will settings do:
+            Go to Account Management
+            Change Background Color
+            Turn On or Off Transition Animations
+            ... stuff like that, I will try to think of more, but we do need a few more
+-->
+
+</RelativeLayout>

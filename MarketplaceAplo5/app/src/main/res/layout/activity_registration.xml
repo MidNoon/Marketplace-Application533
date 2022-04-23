@@ -7,6 +7,15 @@
     tools:context=".RegistrationActivity"
     >
 
+<!--    Information Required for a Profile to be created:
+        *First Name
+        *Last Name
+        Email Address
+        *Phone Number
+        *Address
+        Password
+        *Confirm Password
+-->
     <ImageView
         android:id="@+id/register_applogo"
         android:layout_width="300dp"
