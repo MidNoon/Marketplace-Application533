@@ -40,16 +40,6 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
 
-
-        AddNewProductButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                ValidateProductData();
-            }
-        });
-    }
-    }
      
     
     
