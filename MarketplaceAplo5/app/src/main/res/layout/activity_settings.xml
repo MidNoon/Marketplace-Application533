@@ -8,10 +8,11 @@
 
 <!--    ***Place holder we will probably make this a fragment***
         What will settings do:
-            Go to Account Management
             Change Background Color
-            Turn On or Off Transition Animations
-            ... stuff like that, I will try to think of more, but we do need a few more
+            Resetting their password
+            Deleting account
+            Changing Address
+            Changing Username
 -->
 
 </RelativeLayout>
