@@ -15,7 +15,6 @@
         <activity android:name=".USoldItemsActivity" />
         <activity android:name=".UViewItemsActivity" />
         <activity android:name=".UAddItemActivity" />
-        <activity android:name=".ProfileManageActivity" />
         <activity android:name=".ItemPurchaseActivity" />
         <activity android:name=".ItemManagementActivity" />
         <activity android:name=".InvoiceActivity" />
