@@ -24,7 +24,7 @@
             android:background="@color/purple_200"
             android:hint="Product Name"
             android:padding="9dp"
-            android:textColorHint="black"
+            android:textColorHint="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
 
