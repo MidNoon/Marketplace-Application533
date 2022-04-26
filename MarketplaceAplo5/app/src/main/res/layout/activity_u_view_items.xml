@@ -4,43 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchProductsActivity">
+    tools:context=".MainActivity">
     <RelativeLayout
         android:id="@+id/r5"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/teal_200"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         >
+
         <EditText
 
             android:id="@+id/search_product_name"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:background="@color/purple_200"
             android:hint="Product Name"
+            android:padding="9dp"
+            android:textColorHint="black"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:background="@android:color/white"
-            android:layout_marginStart="5dp"
-            android:layout_centerVertical="true"
-            android:padding="9dp"
-            android:textColorHint="@color/colorPrimaryDark"
 
             />
+
         <Button
             android:id="@+id/search_btn"
             android:layout_width="wrap_content"
-            android:text="Search"
-            android:textColor="@android:color/white"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:padding="9dp"
+            android:layout_centerInParent="true"
             android:layout_toRightOf="@+id/search_product_name"
-            />
+            android:background="@color/purple_500"
+            android:padding="9dp"
+            android:text="Search"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
