@@ -1,7 +1,5 @@
 package com.example.marketplaceaplo5;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -18,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
     private Button btnLogin;
-    private TextView textRegister;
+    private TextView textRegister, ForgetPasswordLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,14 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.login_password_input);
         btnLogin  = findViewById(R.id.login_button);
         textRegister = findViewById(R.id.text_register);
+        ForgetPasswordLink = (TextView) findViewById(R.id.forget_password_link);
+
+        ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void login() {
         String user = email.getText().toString().trim();

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketplaceAplo5">
 
+
         <activity android:name=".USoldItemsActivity" />
         <activity android:name=".UViewItemsActivity" />
         <activity android:name=".UAddItemActivity" />
@@ -22,6 +23,7 @@
         <activity android:name=".BrowseActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".ResetPasswordActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
