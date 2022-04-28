@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemActivity">
+    tools:context="UViewItemsActivity">
     <RelativeLayout
         android:id="@+id/r5"
         android:layout_width="match_parent"
@@ -40,12 +40,6 @@
         >
 
     </androidx.recyclerview.widget.RecyclerView>
-</RelativeLayout> android:id="@+id/search_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/r5"
-
-        >
-
-    </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>
+
+
