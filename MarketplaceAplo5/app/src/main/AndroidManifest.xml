@@ -21,9 +21,12 @@
         <activity android:name=".InvoiceActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".BrowseActivity" />
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".RegistrationActivity"
+            android:parentActivityName=".MainActivity" />/>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".ResetPasswordActivity"/>
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
