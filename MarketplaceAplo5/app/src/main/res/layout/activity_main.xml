@@ -54,19 +54,19 @@
         android:text="View Invoices" />
 
     <Button
-        android:id="@+id/button_main_profilemanage"
+        android:id="@+id/button_main_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_main_invoices"
         android:layout_marginTop="10dp"
-        android:text="Manage Profile" />
+        android:text="Settings" />
 
     <Button
         android:id="@+id/button_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/button_main_profilemanage"
+        android:layout_below="@+id/button_main_settings"
         android:text="Log Out"/>
     <Button
         android:id="@+id/resendCode"

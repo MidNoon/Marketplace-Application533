@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button button_logout;
     private Button button_main_browse;
+
     private Button rdCode;
+
+
+    private Button button_main_item;
+    private Button button_main_invoices;
+    private Button button_main_settings;
 
 
 
@@ -31,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         button_logout = findViewById(R.id.button_logout);
         button_main_browse = findViewById(R.id.button_main_browse);
+        button_main_item = findViewById(R.id.button_main_item);
+        button_main_invoices = findViewById(R.id.button_main_invoices);
+        button_main_settings = findViewById(R.id.button_main_settings);
+
         rdCode = (Button) findViewById(R.id.resendCode);
 
 
@@ -76,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-
-
         button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +97,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BrowseActivity.class));
+            }
+        });
+        button_main_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ItemManagementActivity.class));
+            }
+        });
+        button_main_invoices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InvoiceActivity.class));
+            }
+        });
+        button_main_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
     }
