@@ -25,4 +25,5 @@ public class ItemManagementActivity extends AppCompatActivity {
             startActivity(new Intent(ItemManagementActivity.this, LoginActivity.class));
         }
     }
+
 }

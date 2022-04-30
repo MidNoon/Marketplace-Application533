@@ -6,6 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".ItemManagementActivity">
 
+    <Button
+        android:id="@+id/add_new_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="45dp"
+        android:background="@color/teal_200"
+        android:padding="17dp"
+        android:text="Add New Product"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/view_sold_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_new_product"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="45dp"
+        android:background="@color/teal_200"
+        android:padding="17dp"
+        android:text="View Sold Items"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/view_active_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_sold_product"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="45dp"
+        android:background="@color/teal_200"
+        android:padding="17dp"
+        android:text="View Active Products"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/view_bought_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_active_product"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="45dp"
+        android:background="@color/teal_200"
+        android:padding="17dp"
+        android:text="View Bought Products"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+
+
+
 <!--    This Activity is a Management Activity for Items
         Item Database Information Guide:
             Item Name
