@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button button_logout;
     private Button button_main_browse;
-<<<<<<< Updated upstream
+
     private Button rdCode;
 
-=======
+
     private Button button_main_item;
     private Button button_main_invoices;
     private Button button_main_settings;
->>>>>>> Stashed changes
+
 
 
     @Override
@@ -37,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         button_logout = findViewById(R.id.button_logout);
         button_main_browse = findViewById(R.id.button_main_browse);
-<<<<<<< Updated upstream
+        button_main_item = findViewById(R.id.button_main_item);
+        button_main_invoices = findViewById(R.id.button_main_invoices);
+        button_main_settings = findViewById(R.id.button_main_settings);
+
         rdCode = (Button) findViewById(R.id.resendCode);
 
 
@@ -82,13 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-
-
-=======
-        button_main_item = findViewById(R.id.button_main_item);
-        button_main_invoices = findViewById(R.id.button_main_invoices);
-        button_main_settings = findViewById(R.id.button_main_settings);
->>>>>>> Stashed changes
 
         button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
