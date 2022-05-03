@@ -17,11 +17,11 @@ public class UAddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_u_add_item);
 
-        ProductName = FirebaseDatabase.getInstance().getReference().child("Product Name");
-        ProductDescription  = FirebaseDatabase.getInstance().getReference().child("Product Description");
-        Price = FirebaseDatabase.getInstance().getReference().child("Price");
+       // ProductName = FirebaseDatabase.getInstance().getReference().child("Product Name");
+       // ProductDescription  = FirebaseDatabase.getInstance().getReference().child("Product Description");
+       // Price = FirebaseDatabase.getInstance().getReference().child("Price");
 
-
+/*
     }
     private void SaveProductInfoToDatabase()
     {
@@ -29,6 +29,6 @@ public class UAddItemActivity extends AppCompatActivity {
         productMap.put("product", ProductName);
         productMap.put("description", ProductDescription);
         productMap.put("price", Price);
-
+*/
     }
 }
