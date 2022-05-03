@@ -22,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView textRegister, ForgetPasswordLink;
 
+
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin  = findViewById(R.id.login_button);
         textRegister = findViewById(R.id.text_register);
         ForgetPasswordLink = (TextView) findViewById(R.id.forget_password_link);
+
 
         ForgetPasswordLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
     private void login() {
         String user = email.getText().toString().trim();
         String pass = password.getText().toString().trim();
+
+
         if(user.isEmpty()) {
             email.setError("Email can not be empty");
         }
@@ -70,9 +80,18 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()) {
-                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this , MainActivity.class));
+                        if(mAuth.getCurrentUser().isEmailVerified()){
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this , MainActivity.class));
+
+                        }else {
+                            Toast.makeText(LoginActivity.this, "Please Verify your email address", Toast.LENGTH_SHORT).show();
+                        }
+
+
                     }
+
+
                     else {
                         Toast.makeText(LoginActivity.this, "Login Failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

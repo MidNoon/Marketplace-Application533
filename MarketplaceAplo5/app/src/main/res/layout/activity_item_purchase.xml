@@ -9,4 +9,137 @@
     <!--    This is where the user goes when they click on purchase in the -->
     <!--    This is where the user goes when they click on purchase in the detailed view browse fragment-->
 
+    <TextView
+        android:id="@+id/textCheckOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="62dp"
+        android:textAlignment="center"
+        android:text="Check Out"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        />
+
+    <TextView
+        android:id="@+id/textProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCheckOut"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_below="@id/textProductName"
+        />
+
+
+    <EditText
+        android:id="@+id/editTextPostalAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:text="Address"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/editTextLastName"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/editTextPhone"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Last Name"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextZip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@id/editTextState"
+        android:inputType="number"
+        android:text="Zip Code"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@id/editTextCity"
+        android:text="State"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@id/editTextPostalAddress"
+        android:text="City"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/editTextPostalAddress"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Phone Number"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextZip"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:text="Confirm" />
+
+    <Button
+        android:id="@+id/btn_goback"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextZip"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:text="Go Back" />
+
+
+
 </RelativeLayout>
