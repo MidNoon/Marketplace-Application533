@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         button_main_invoices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, InvoiceActivity.class));
+                startActivity(new Intent(MainActivity.this, ItemPurchaseActivity.class));
             }
         });
         button_main_settings.setOnClickListener(new View.OnClickListener() {
