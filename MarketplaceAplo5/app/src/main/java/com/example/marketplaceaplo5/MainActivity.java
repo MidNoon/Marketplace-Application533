@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     String testpid;
 
     private Button button_main_item;
-    private Button button_main_invoices;
+    private Button button_main_about;
     private Button button_main_settings;
     private DatabaseReference databaseReference;
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         button_logout = findViewById(R.id.button_logout);
         button_main_browse = findViewById(R.id.button_main_browse);
         button_main_item = findViewById(R.id.button_main_item);
-        button_main_invoices = findViewById(R.id.button_main_invoices);
+        button_main_about = findViewById(R.id.button_main_about);
         button_main_settings = findViewById(R.id.button_main_settings);
 
         FirebaseUser user = mAuth.getCurrentUser();
@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button_main_invoices.setOnClickListener(new View.OnClickListener() {
+        button_main_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ItemPurchaseActivity.class));
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
             }
         });
         button_main_settings.setOnClickListener(new View.OnClickListener() {

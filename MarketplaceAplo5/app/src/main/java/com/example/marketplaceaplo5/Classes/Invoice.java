@@ -3,29 +3,60 @@ package com.example.marketplaceaplo5.Classes;
 
 public class Invoice {
 
-    /* Invoices Will be titled with a UniqueInvoiceId. Invoices will */
-    private String name, address, contact, city, Price, State, Date, Time, userID;
+    /* Invoices Will be titled with a UniqueInvoiceId. Invoices will*/
+
+    private String invoiceID, firstname, lastname, phone, address, city, state, zip, productID, productName, price, sellerID, buyerID, listEpoch, sellEpoch;
 
     public Invoice(){}
 
-    public Invoice(String name, String address, String contact, String city, String price, String state, String date, String time, String userID) {
-        this.name = name;
+    public Invoice(String invoiceID, String firstname, String lastname, String phone, String address, String city, String state, String zip, String productID, String productName, String price, String sellerID, String buyerID, String listEpoch, String sellEpoch) {
+        this.invoiceID = invoiceID;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phone = phone;
         this.address = address;
-        this.contact = contact;
         this.city = city;
-        Price = price;
-        State = state;
-        Date = date;
-        Time = time;
-        this.userID = userID;
+        this.state = state;
+        this.zip = zip;
+        this.productID = productID;
+        this.productName = productName;
+        this.price = price;
+        this.sellerID = sellerID;
+        this.buyerID = buyerID;
+        this.listEpoch = listEpoch;
+        this.sellEpoch = sellEpoch;
     }
 
-    public String getName() {
-        return name;
+    public String getInvoiceID() {
+        return invoiceID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInvoiceID(String invoiceID) {
+        this.invoiceID = invoiceID;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -36,14 +67,6 @@ public class Invoice {
         this.address = address;
     }
 
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
     public String getCity() {
         return city;
     }
@@ -52,43 +75,75 @@ public class Invoice {
         this.city = city;
     }
 
-    public String getPrice() {
-        return Price;
-    }
-
-    public void setPrice(String price) {
-        Price = price;
-    }
-
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
-    public String getDate() {
-        return Date;
+    public String getZip() {
+        return zip;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 
-    public String getTime() {
-        return Time;
+    public String getProductID() {
+        return productID;
     }
 
-    public void setTime(String time) {
-        Time = time;
+    public void setProductID(String productID) {
+        this.productID = productID;
     }
 
-    public String getUserID(){
-        return userID;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setUserID(){
-        this.userID = userID;
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getSellerID() {
+        return sellerID;
+    }
+
+    public void setSellerID(String sellerID) {
+        this.sellerID = sellerID;
+    }
+
+    public String getBuyerID() {
+        return buyerID;
+    }
+
+    public void setBuyerID(String buyerID) {
+        this.buyerID = buyerID;
+    }
+
+    public String getListEpoch() {
+        return listEpoch;
+    }
+
+    public void setListEpoch(String listEpoch) {
+        this.listEpoch = listEpoch;
+    }
+
+    public String getSellEpoch() {
+        return sellEpoch;
+    }
+
+    public void setSellEpoch(String sellEpoch) {
+        this.sellEpoch = sellEpoch;
     }
 }
