@@ -88,6 +88,7 @@ public class ItemPurchaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //GoBack();
+                startActivity(new Intent(ItemPurchaseActivity.this, BrowseActivity.class));
             }
         });
 
