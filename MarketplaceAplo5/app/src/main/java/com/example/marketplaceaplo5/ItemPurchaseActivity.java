@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.marketplaceaplo5.Classes.Products;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,9 +38,13 @@ public class ItemPurchaseActivity extends AppCompatActivity {
 * */
     private FirebaseAuth mAuth;
 
+    private  Products productInfoRef;
+    private DatabaseReference databaseReference;
     private TextView TextProductName, TextProductPrice;
     private EditText InputFirstName, InputLastName, InputPhone, InputAddress, InputCity, InputState, InputZip, InputCardNumber, InputCVV, InputExpiration;
     private Button ButtonBack, ButtonConfirm;
+    private String intentProductID, orderPrice;
+    Intent extras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +69,14 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         ButtonBack = (Button) findViewById(R.id.btn_goback);
         ButtonConfirm = (Button) findViewById(R.id.btn_confirm);
 
+        extras = getIntent();
+        //intentProductID = extras.getStringExtra("pid");
+        intentProductID = "Example";
+        //Log.i("orderPrice:",orderPrice);
+        //TextProductName.setText(intentProductID);
+
+        productInfo();
+
         ButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +98,27 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         if(currentUser == null) {
             startActivity(new Intent(ItemPurchaseActivity.this, LoginActivity.class));
         }
+    }
+
+    private void productInfo() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Products");
+
+        databaseReference.child(intentProductID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productInfoRef = dataSnapshot.getValue(Products.class);
+
+                TextProductName.setText(productInfoRef.getProductName());
+
+                TextProductPrice.setText("Price: " + productInfoRef.getPrice());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void Confirmation() {
@@ -145,24 +180,6 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         }
     }
 
-    public static class OrderForm {
-
-        public String firstname;
-        public String lastname;
-        public String phone;
-        public String address;
-        public String city;
-        public String state;
-        public String zip;
-        public String cardnumber;
-        public String cvv;
-        public String expiration;
-
-
-        public OrderForm(String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration) {
-
-        }
-    }
 
     private void Order(String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration){
         final DatabaseReference RootRef;
@@ -225,5 +242,6 @@ public class ItemPurchaseActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".ItemManagementActivity">
 
     <Button
-        android:id="@+id/add_new_product"
+        android:id="@+id/btn_ima_uaia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -24,7 +24,7 @@
         android:id="@+id/view_sold_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_new_product"
+        android:layout_below="@+id/btn_ima_uaia"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="56dp"
         android:layout_marginRight="45dp"
