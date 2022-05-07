@@ -86,7 +86,6 @@ public class UAddItemActivity extends AppCompatActivity {
         ProductAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProductAddButton.setClickable(false);
                 InfoStorage();
             }
         });
