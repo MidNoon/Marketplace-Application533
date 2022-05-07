@@ -314,6 +314,6 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         databaseReference.removeValue();
         Toast.makeText(getApplicationContext(), "Invoice Created", Toast.LENGTH_LONG).show();
         finish();
-        startActivity(new Intent(ItemPurchaseActivity.this, BrowseActivity.class));
+        startActivity(new Intent(ItemPurchaseActivity.this, InvoiceActivity.class));
     }
 }

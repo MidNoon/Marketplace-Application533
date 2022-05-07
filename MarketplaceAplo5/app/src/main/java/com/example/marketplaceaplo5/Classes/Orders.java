@@ -1,12 +1,12 @@
 package com.example.marketplaceaplo5.Classes;
 
 public class Orders {
-    private String orderID, firstname, lastname, phone, address, city, state, zip, cardnumber, cvv, expiration, productid, price, productName, productPrice, buyerID, listEpoch, sellEpoch;
+    private String orderID, firstname, lastname, phone, address, city, state, zip, cardnumber, cvv, expiration, productid, price, productName, productPrice, buyerID, sellerID, listEpoch, sellEpoch;
 
     public Orders() {
     }
 
-    public Orders(String orderID,String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration, String productid, String price, String productName, String productPrice, String buyerID, String listEpoch, String sellEpoch) {
+    public Orders(String orderID,String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration, String productid, String price, String productName, String productPrice, String buyerID, String sellerID, String listEpoch, String sellEpoch) {
         this.orderID = orderID;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -23,6 +23,7 @@ public class Orders {
         this.productName = productName;
         this.productPrice = productPrice;
         this.buyerID = buyerID;
+        this.sellerID = sellerID;
         this.listEpoch = listEpoch;
         this.sellEpoch = sellEpoch;
     }
@@ -153,6 +154,14 @@ public class Orders {
 
     public void setBuyerID(String buyerID) {
         this.buyerID = buyerID;
+    }
+
+    public String getSellerID() {
+        return sellerID;
+    }
+
+    public void setSellerID(String sellerID) {
+        this.sellerID = sellerID;
     }
 
     public String getListEpoch() {

@@ -12,64 +12,433 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+
         <TextView
-            android:id="@+id/f_invoiceid"
-            android:layout_width="0dp"
+            android:id="@+id/a_orderInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Order Info"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+        <TextView
+            android:id="@+id/b_orderID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OrderID"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@+id/a_orderID"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            />
+        <TextView
+            android:id="@+id/a_orderID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OrderID:"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/a_orderInfo"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            />
+        <TextView
+            android:id="@+id/a_productInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Product Info"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_orderID"
+            />
+        <TextView
+            android:id="@+id/a_productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Product Name:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/a_productInfo"
+            />
+        <TextView
+            android:id="@+id/b_productName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Product Name"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/productImage"
-            app:layout_constraintEnd_toEndOf="@+id/productImage"
-            app:layout_constraintStart_toStartOf="@+id/productImage"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread_inside" />
-
-        <ImageView
-            android:id="@+id/productImage"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_productName"
+            />
+        <!--<TextView
+                    android:id="@+id/a_productID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ProductID:"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/b_productName"
+                    />-->
+        <!--<TextView
+            android:id="@+id/b_productID"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="8dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/productPrice"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/f_invoiceid" />
-
-        <TextView
-            android:id="@+id/productPrice"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:gravity="center"
-            android:text="Price"
+            android:text="ProductID"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_productID"
+            />-->
+        <TextView
+            android:id="@+id/a_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Product Price:"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/productDescription"
-            app:layout_constraintEnd_toEndOf="@+id/productImage"
-            app:layout_constraintStart_toStartOf="@+id/productImage"
-            app:layout_constraintTop_toBottomOf="@+id/productImage"
+            app:layout_constraintTop_toBottomOf="@+id/b_productName"
             />
-
         <TextView
-            android:id="@+id/productDescription"
-            android:layout_width="0dp"
+            android:id="@+id/b_price"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Description"
+            android:text="Product Price"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/productPrice"
-            app:layout_constraintStart_toStartOf="@+id/productPrice"
-            app:layout_constraintTop_toBottomOf="@+id/productPrice"
+            app:layout_constraintTop_toBottomOf="@+id/a_price"
             />
-
+        <TextView
+            android:id="@+id/a_buyerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="UserID of Buyer:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_price"
+            />
+        <TextView
+            android:id="@+id/b_buyerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="buyerID"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_buyerID"
+            />
+        <TextView
+            android:id="@+id/a_sellerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="UserID of Seller:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_buyerID"
+            />
+        <TextView
+            android:id="@+id/b_sellerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="sellerID"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_sellerID"
+            />
+        <TextView
+            android:id="@+id/a_listEpoch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Epoch List Time:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_sellerID"
+            />
+        <TextView
+            android:id="@+id/b_listEpoch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="listEpoch"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_listEpoch"
+            />
+        <TextView
+            android:id="@+id/a_sellEpoch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Epoch Sell Time:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_listEpoch"
+            />
+        <TextView
+            android:id="@+id/b_sellEpoch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="sellEpoch"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_sellEpoch"
+            />
+        <TextView
+            android:id="@+id/a_ShippingInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Shipping Info"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_sellEpoch"
+            />
+        <TextView
+            android:id="@+id/a_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="First Name:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/a_ShippingInfo"
+            />
+        <TextView
+            android:id="@+id/b_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="First Name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_firstname"
+            />
+        <TextView
+            android:id="@+id/a_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Last Name:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_firstname"
+            />
+        <TextView
+            android:id="@+id/b_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Last Name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_lastname"
+            />
+        <TextView
+            android:id="@+id/a_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Phone Number:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_lastname"
+            />
+        <TextView
+            android:id="@+id/b_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Phone Number"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_phone"
+            />
+        <TextView
+            android:id="@+id/a_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Address:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_phone"
+            />
+        <TextView
+            android:id="@+id/b_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_address"
+            />
+        <TextView
+            android:id="@+id/a_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="City:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_address"
+            />
+        <TextView
+            android:id="@+id/b_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="City"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_city"
+            />
+        <TextView
+            android:id="@+id/a_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="State:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_city"
+            />
+        <TextView
+            android:id="@+id/b_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="State"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_state"
+            />
+        <TextView
+            android:id="@+id/a_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Zip Code:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_state"
+            />
+        <TextView
+            android:id="@+id/b_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Zip Code"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_zip"
+            />
+        <TextView
+            android:id="@+id/a_PaymentInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Payment Info"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_zip"
+            />
+        <TextView
+            android:id="@+id/a_cardnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Card Number:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/a_PaymentInfo"
+            />
+        <TextView
+            android:id="@+id/b_cardnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Card Number"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_cardnumber"
+            />
+        <TextView
+            android:id="@+id/a_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CVV: "
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_cardnumber"
+            />
+        <TextView
+            android:id="@+id/b_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CVV"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_cvv"
+            />
+        <TextView
+            android:id="@+id/a_expiration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Expiration Date:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/b_cvv"
+            />
+        <TextView
+            android:id="@+id/b_expiration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Expiration"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/a_expiration"
+            android:layout_marginBottom="30dp"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

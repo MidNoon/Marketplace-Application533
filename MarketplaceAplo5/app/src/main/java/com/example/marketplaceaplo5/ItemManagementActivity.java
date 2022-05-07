@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class ItemManagementActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private Button button_ima_uaia;
+    private Button button_ima_uaia, button_ima_invoice, button_ima_order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class ItemManagementActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         button_ima_uaia = findViewById(R.id.btn_ima_uaia);
+        button_ima_invoice = findViewById(R.id.btn_ima_invoice);
+        button_ima_order = findViewById(R.id.btn_ima_order);
 
 
 
@@ -30,6 +32,20 @@ public class ItemManagementActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ItemManagementActivity.this, UAddItemActivity.class));
+            }
+        });
+
+        button_ima_invoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ItemManagementActivity.this, InvoiceActivity.class));
+            }
+        });
+
+        button_ima_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ItemManagementActivity.this, OrderActivity.class));
             }
         });
     }
