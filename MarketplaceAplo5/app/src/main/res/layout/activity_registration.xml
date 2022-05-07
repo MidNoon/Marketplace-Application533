@@ -18,12 +18,11 @@
 -->
     <ImageView
         android:id="@+id/register_applogo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/setting_wheel"
+        android:layout_width="303dp"
+        android:layout_height="259dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo1" />
 
     <EditText
         android:id="@+id/register_email_input"
