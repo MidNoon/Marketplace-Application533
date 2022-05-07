@@ -17,12 +17,14 @@ public class DetailBrowseFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PRODUCT_NAME = "Product Name";
+    private static final String ARG_PRODUCT_DESCRIPTION = "Product Description";
+    private static final String ARG_PRICE = "Price";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String mParam3;
 
     public DetailBrowseFragment() {
         // Required empty public constructor
@@ -37,11 +39,12 @@ public class DetailBrowseFragment extends Fragment {
      * @return A new instance of fragment DetailBrowseFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DetailBrowseFragment newInstance(String param1, String param2) {
+    public static DetailBrowseFragment newInstance(String param1, String param2, String param3) {
         DetailBrowseFragment fragment = new DetailBrowseFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_PRODUCT_NAME, param1);
+        args.putString(ARG_PRODUCT_DESCRIPTION, param2);
+        args.putString(ARG_PRICE, param3);
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,8 +53,9 @@ public class DetailBrowseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam1 = getArguments().getString(ARG_PRODUCT_NAME);
+            mParam2 = getArguments().getString(ARG_PRODUCT_DESCRIPTION);
+            mParam3 = getArguments().getString(ARG_PRICE);
         }
     }
 
