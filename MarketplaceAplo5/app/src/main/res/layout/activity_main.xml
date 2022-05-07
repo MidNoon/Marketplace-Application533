@@ -35,7 +35,7 @@
         android:layout_centerInParent="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:text="Browse Items" />
+        android:text="Browse Products" />
 
     <Button
         android:id="@+id/button_main_item"
@@ -43,21 +43,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_main_browse"
         android:layout_marginTop="10dp"
-        android:text="Item Management" />
-
-    <Button
-        android:id="@+id/button_main_invoices"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_main_item"
-        android:layout_marginTop="10dp"
-        android:text="View Invoices" />
+        android:text="Management" />
 
     <Button
         android:id="@+id/button_main_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_main_invoices"
+        android:layout_below="@+id/button_main_item"
         android:layout_marginTop="10dp"
         android:text="Settings" />
 

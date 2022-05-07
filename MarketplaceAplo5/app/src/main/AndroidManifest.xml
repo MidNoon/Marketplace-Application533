@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketplaceAplo5">
-        <activity android:name=".UBoughtItemsActivity"></activity>
-        <activity android:name=".USoldItemsActivity" />
-        <activity android:name=".UViewItemsActivity" />
+        <activity android:name=".OrderActivity"></activity>
         <activity android:name=".UAddItemActivity" />
         <activity android:name=".ItemPurchaseActivity" />
         <activity android:name=".ItemManagementActivity" />
