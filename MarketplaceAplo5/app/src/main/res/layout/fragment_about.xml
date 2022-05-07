@@ -3,4 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentAbout"/>
+    tools:context=".DetailBrowseFragment">
+
+
+    <TextView
+        android:id="@+id/String_about"
+        android:layout_width="match_parent"
+        android:layout_height="265dp"
+        android:gravity="center"
+        android:text="About"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/String_info"
+        android:layout_width="match_parent"
+        android:layout_height="442dp"
+        android:gravity="center"
+        android:layout_below="@+id/String_about"
+        android:text="The purpose of this app is to create an eccommerce applicatio that can be used for people to sell and buy items. To start you will need to create an account which will save to a secure data base. Afterwards you be able to buy sell or view items at your convinience. Click item management to do this. " />
+
+</FrameLayout>
