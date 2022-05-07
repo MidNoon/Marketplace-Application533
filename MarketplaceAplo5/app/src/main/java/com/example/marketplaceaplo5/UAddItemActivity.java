@@ -176,7 +176,10 @@ public class UAddItemActivity extends AppCompatActivity {
         Boolean isSold = false;
         Boolean isRemoved = false;
 
+        final String pushId = FirebaseDatabase.getInstance().getReference().push().getKey(); //Create new random Id
+
         HashMap<String, Object> productMap = new HashMap<>();
+            productMap.put("pid", pushId);
             productMap.put("productName", productName);
             productMap.put("description", productDescription);
             productMap.put("price", productPrice);
@@ -188,7 +191,6 @@ public class UAddItemActivity extends AppCompatActivity {
             productMap.put("isSold", isSold);
             productMap.put("isRemoved", isRemoved);
 
-        final String pushId = FirebaseDatabase.getInstance().getReference().push().getKey(); //Create new random Id
         FirebaseDatabase.getInstance().getReference().child("Products").child(pushId).setValue(productMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -198,25 +200,4 @@ public class UAddItemActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-                    /*
-                    RootRef.child("Orders").child(orderID).updateChildren(userdataMap)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(ItemPurchaseActivity.this, "Congratulations, your new account has been created", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent (ItemPurchaseActivity.this, LoginActivity.class);
-                                        startActivity(intent);
-                                    }
-                                    else {
-                                        Toast.makeText(ItemPurchaseActivity.this, "There was an error: try again or contact support", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-
- */
 }

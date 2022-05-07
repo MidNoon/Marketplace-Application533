@@ -4,12 +4,12 @@ public class Products {
     private String pid;
     private String productName;
     private String description;
-    private Double price;
+    private String price;
     private String image;
     private String sellerID;
     private String buyerID;
-    private Integer sellEpoch;
-    private Integer listEpoch;
+    private String sellEpoch;
+    private String listEpoch;
     private Boolean isSold;
     private Boolean isRemoved;
 
@@ -17,7 +17,7 @@ public class Products {
 
     }
 
-    public Products(String pid, String productName, String description, Double price, String image, String buyerID, String sellerID, Integer listEpoch, Integer sellEpoch, Boolean isSold, Boolean isRemoved) {
+    public Products(String pid, String productName, String description, String price, String image, String buyerID, String sellerID, String listEpoch, String sellEpoch, Boolean isSold, Boolean isRemoved) {
         this.pid = pid;
         this.productName = productName;
         this.description = description;
@@ -55,11 +55,11 @@ public class Products {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -87,19 +87,19 @@ public class Products {
         this.buyerID = buyerID;
     }
 
-    public Integer getListEpoch() {
+    public String getListEpoch() {
         return listEpoch;
     }
 
-    public void setListEpoch(Integer listEpoch) {
+    public void setListEpoch(String listEpoch) {
         this.listEpoch = listEpoch;
     }
 
-    public Integer getSellEpoch() {
+    public String getSellEpoch() {
         return sellEpoch;
     }
 
-    public void setSellEpoch(Integer sellEpoch) {
+    public void setSellEpoch(String sellEpoch) {
         this.sellEpoch = sellEpoch;
     }
 

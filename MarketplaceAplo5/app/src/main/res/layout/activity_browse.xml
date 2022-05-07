@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BrowseActivity">
 
-    <!--    This Activity will be where we display listed items to the user
-            Clicking on one of the items will bring up the DetailedViewFragment
-            We will not be displaying already sold items within the Activity
-    -->
+    <include layout="@layout/content_browse" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment"
-        android:name="com.example.marketplaceaplo5.SettingsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp" />
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

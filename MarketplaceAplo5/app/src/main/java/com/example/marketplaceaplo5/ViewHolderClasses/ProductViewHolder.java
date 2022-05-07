@@ -7,24 +7,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.marketplaceaplo5.Interface.ItemClickListener;
+import com.example.marketplaceaplo5.R;
 
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 
-    public TextView product_name, product_price, product_description;
-    public ImageView product_image;
+    public TextView vproductName, vproductPrice, vproductDescription;
+    public ImageView vproductImage;
+    public ItemClickListener listener;
 
 
     public ProductViewHolder(@NonNull View itemView) {
         super(itemView);
-/*
-        product_name = itemView.findViewById(R.id.product_name);
-        product_price = itemView.findViewById(R.id.product_price);
-        product_description = itemView.findViewById(R.id.product_description);
-        product_image = itemView.findViewById(R.id.product_image);
 
- */
+        vproductName = itemView.findViewById(R.id.productName);
+        vproductPrice = itemView.findViewById(R.id.productPrice);
+        vproductDescription = itemView.findViewById(R.id.productDescription);
+        vproductImage = itemView.findViewById(R.id.productImage);
 
+    }
+
+    public void setItemClickListener(ItemClickListener listener) {
+        this.listener = listener;
+    }
+
+    public void onClick(View view) {
+        listener.onClick(view, getAdapterPosition(), false);
     }
 
 }
