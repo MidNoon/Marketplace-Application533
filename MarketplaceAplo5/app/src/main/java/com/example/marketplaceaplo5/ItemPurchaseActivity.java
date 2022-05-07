@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -45,6 +46,9 @@ public class ItemPurchaseActivity extends AppCompatActivity {
     private Button ButtonBack, ButtonConfirm;
     private String intentProductID, orderPrice;
     Intent extras;
+    private String currentFirebaseUser, pid, productName, productPrice, sellerID, listEpoch;
+    private Products productDetail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,15 +69,18 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         InputCardNumber = (EditText) findViewById(R.id.editTextCardNumber);
         InputCVV = (EditText) findViewById(R.id.editTextCVV);
         InputExpiration = (EditText) findViewById(R.id.editTextExpiration);
+        currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         ButtonBack = (Button) findViewById(R.id.btn_goback);
         ButtonConfirm = (Button) findViewById(R.id.btn_confirm);
 
         extras = getIntent();
-        //intentProductID = extras.getStringExtra("pid");
-        intentProductID = "Example";
+        intentProductID = extras.getStringExtra("pid");
+        //intentProductID = "Example";
         //Log.i("orderPrice:",orderPrice);
         //TextProductName.setText(intentProductID);
+
+        loadClickProductInfo();
 
         productInfo();
 
@@ -121,6 +128,28 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         });
     }
 
+    private void loadClickProductInfo() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Products");
+
+        databaseReference.child(intentProductID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productDetail = dataSnapshot.getValue(Products.class);
+
+                pid = productDetail.getPID();
+                productName = productDetail.getProductName();
+                productPrice = productDetail.getPrice();
+                sellerID = productDetail.getSellerID();
+                listEpoch = productDetail.getListEpoch();
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+
     private void Confirmation() {
         String firstname = InputFirstName.getText().toString();
         String lastname = InputLastName.getText().toString();
@@ -132,6 +161,10 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         String cardnumber = InputCardNumber.getText().toString();
         String cvv = InputCVV.getText().toString();
         String expiration = InputExpiration.getText().toString();
+
+
+        Long tsLong = System.currentTimeMillis();
+        String ts = tsLong.toString();
 
         // UserID
         // UserEmail
@@ -176,12 +209,12 @@ public class ItemPurchaseActivity extends AppCompatActivity {
             Toast.makeText(this, "No Expiration", Toast.LENGTH_SHORT).show();
         }
         else {
-            Order(firstname, lastname, phone, address, city, state, zip, cardnumber, cvv, expiration);
+            Order(currentFirebaseUser, firstname, lastname, phone, address, city, state, zip, cardnumber, cvv, expiration, ts);
         }
     }
 
 
-    private void Order(String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration){
+    private void Order(String buyerID, String firstname, String lastname, String phone, String address, String city, String state, String zip, String cardnumber, String cvv, String expiration, String sellEpoch){
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -194,54 +227,93 @@ public class ItemPurchaseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    HashMap<String, Object> userdataMap = new HashMap<>();
+                final String pushId = FirebaseDatabase.getInstance().getReference().push().getKey(); //Create new random Id
 
-                    userdataMap.put("firstname", firstname);
-                    userdataMap.put("lastname", lastname);
-                    userdataMap.put("phone", phone);
-                    userdataMap.put("address", address);
-                    userdataMap.put("city", city);
-                    userdataMap.put("state", state);
-                    userdataMap.put("zip", zip);
-                    userdataMap.put("cardnumber", cardnumber);
-                    userdataMap.put("cvv", cvv);
-                    userdataMap.put("expiration", expiration);
+                HashMap<String, Object> orderMap = new HashMap<>();
+                    orderMap.put("orderID", pushId);
+                    orderMap.put("firstname", firstname);
+                    orderMap.put("lastname", lastname);
+                    orderMap.put("phone", phone);
+                    orderMap.put("address", address);
+                    orderMap.put("city", city);
+                    orderMap.put("state", state);
+                    orderMap.put("zip", zip);
+                    orderMap.put("cardnumber", cardnumber);
+                    orderMap.put("cvv", cvv);
+                    orderMap.put("expiration", expiration);
+                    orderMap.put("pid", pid);
+                    orderMap.put("productName", productName);
+                    orderMap.put("price", productPrice);
+                    orderMap.put("sellerID", sellerID);
+                    orderMap.put("buyerID", buyerID);
+                    orderMap.put("listEpoch", listEpoch);
+                    orderMap.put("sellEpoch", sellEpoch);
 
-                    final String pushId = FirebaseDatabase.getInstance().getReference().push().getKey(); //Create new random Id
-                    FirebaseDatabase.getInstance().getReference().child("Orders").child(pushId).setValue(userdataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    FirebaseDatabase.getInstance().getReference().child("Orders").child(sellerID).child(pushId).setValue(orderMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(getApplicationContext(), "Order Placed", Toast.LENGTH_LONG).show();
-                            finish();
-                            startActivity(new Intent(ItemPurchaseActivity.this, ItemPurchaseActivity.class));
+                            Invoice(buyerID, firstname, lastname, phone, address, city, state, zip, productName, productPrice, sellerID, listEpoch, sellEpoch);
                         }
                     });
-                    /*
-                    RootRef.child("Orders").child(orderID).updateChildren(userdataMap)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(ItemPurchaseActivity.this, "Congratulations, your new account has been created", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent (ItemPurchaseActivity.this, LoginActivity.class);
-                                        startActivity(intent);
-                                    }
-                                    else {
-                                        Toast.makeText(ItemPurchaseActivity.this, "There was an error: try again or contact support", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-
- */
-
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
+    }
+    private void Invoice(String buyerID, String firstname, String lastname, String phone, String address, String city, String state, String zip, String productName, String productPrice, String sellerID, String listEpoch, String sellEpoch){
+        final DatabaseReference RootRef;
+        RootRef = FirebaseDatabase.getInstance().getReference();
+
+        //DatabaseReference newRootRef = RootRef.push();
+
+        //String orderID = newRootRef.getKey();
+
+
+        RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                final String rushId = FirebaseDatabase.getInstance().getReference().push().getKey(); //Create new random Id
+
+                HashMap<String, Object> invoiceMap = new HashMap<>();
+                invoiceMap.put("invoiceID", rushId);
+                invoiceMap.put("firstname", firstname);
+                invoiceMap.put("lastname", lastname);
+                invoiceMap.put("phone", phone);
+                invoiceMap.put("address", address);
+                invoiceMap.put("city", city);
+                invoiceMap.put("state", state);
+                invoiceMap.put("zip", zip);
+                invoiceMap.put("pid", pid);
+                invoiceMap.put("productName", productName);
+                invoiceMap.put("price", productPrice);
+                invoiceMap.put("sellerID", sellerID);
+                invoiceMap.put("buyerID", buyerID);
+                invoiceMap.put("listEpoch", listEpoch);
+                invoiceMap.put("sellEpoch", sellEpoch);
+
+                FirebaseDatabase.getInstance().getReference().child("Invoice").child(buyerID).child(rushId).setValue(invoiceMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        DeleteData();
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void DeleteData() {
+        databaseReference = FirebaseDatabase.getInstance().getReference()
+                .child("Products").child(pid);
+        databaseReference.removeValue();
+        Toast.makeText(getApplicationContext(), "Invoice Created", Toast.LENGTH_LONG).show();
+        finish();
+        startActivity(new Intent(ItemPurchaseActivity.this, BrowseActivity.class));
     }
 }

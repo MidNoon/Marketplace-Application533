@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="15dp"
+    android:layout_margin="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/invoiceid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="InvoiceID"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <TextView
+            android:id="@+id/productid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ProductID"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/invoiceid"
+            />
+
+        <TextView
+            android:id="@+id/productname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Product Name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+
+        <TextView
+            android:id="@+id/productprice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Product Price"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productname"
+            />
+       <!-- <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />
+        <TextView
+            android:id="@+id/productDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/productid"
+            />-->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

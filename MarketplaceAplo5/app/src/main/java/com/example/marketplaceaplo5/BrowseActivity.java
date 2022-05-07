@@ -61,8 +61,8 @@ public class BrowseActivity extends AppCompatActivity {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(BrowseActivity.this, DetailBrowseFragment.class);
-                        intent.putExtra("pid",model.getPid());
+                        Intent intent = new Intent(BrowseActivity.this, ItemPurchaseActivity.class);
+                        intent.putExtra("pid",model.getPID());
                         startActivity(intent);
                     }
                 });

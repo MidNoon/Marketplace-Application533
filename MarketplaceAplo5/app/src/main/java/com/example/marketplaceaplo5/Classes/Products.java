@@ -31,11 +31,11 @@ public class Products {
         this.isRemoved = isRemoved;
     }
 
-    public String getPid() {
+    public String getPID() {
         return pid;
     }
 
-    public void setPid(String pid) {
+    public void setPID(String pid) {
         this.pid = pid;
     }
 
