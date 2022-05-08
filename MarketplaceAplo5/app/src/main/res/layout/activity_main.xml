@@ -16,16 +16,15 @@
             Logout -> ACTION -> LOGS USER OUT
     -->
 
-    <TextView
+    <ImageView
         android:id="@+id/text_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
         android:layout_above="@+id/button_main_browse"
-        android:text="Main Menu"
-        android:layout_centerInParent="true"
-        android:textSize="20dp"
-        android:layout_marginBottom="10dp"
+        android:src="@drawable/logo1"
+        android:layout_centerHorizontal="true"
         />
+
 
 
     <Button
