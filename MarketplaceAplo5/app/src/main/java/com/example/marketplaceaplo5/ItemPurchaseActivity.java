@@ -95,7 +95,6 @@ public class ItemPurchaseActivity extends AppCompatActivity {
         ButtonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ButtonConfirm.setClickable(false);
                 Confirmation();
             }
         });
