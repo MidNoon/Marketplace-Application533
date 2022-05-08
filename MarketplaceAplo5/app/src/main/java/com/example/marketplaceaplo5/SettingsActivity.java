@@ -14,7 +14,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private Button buttonPass;
-    private Button buttonDelete;
+    private Button buttonChange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +29,21 @@ public class SettingsActivity extends AppCompatActivity {
                 openResetPasswordActivity();
             }
         });
-        //buttonDelete = (Button) findViewById(R.id.button2);
-        //buttonDelete.setOnClickListener(new View.OnClickListener(){
-        //    @Override
-        //    public void onClick(View v)
-        //    openResetEmailActivity();
-        //    }
-        //});
+        buttonChange = (Button) findViewById(R.id.button2);
+        buttonChange.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){ openChangeThemeActivity(); }
+        });
     }
 
     public void openResetPasswordActivity() {
         Intent intent = new Intent(this, ResetPasswordActivity.class);
         startActivity(intent);
     }
-    //public void openResetEmailActivity() {
-    //    Intent intent = new Intent(this, DeleteAccountActivity.class);
-    //    startActivity(intent);
-    //}
+    public void openChangeThemeActivity() {
+        Intent intent = new Intent(this, ChangeThemeActivity.class);
+        startActivity(intent);
+    }
     @Override
     public void onStart(){
         super.onStart();
