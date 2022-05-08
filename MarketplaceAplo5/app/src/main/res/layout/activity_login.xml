@@ -9,12 +9,11 @@
 
     <ImageView
         android:id="@+id/login_applogo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/setting_wheel"
+        android:layout_width="303dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
+        android:layout_marginTop="80dp"
+        android:src="@drawable/logo1" />
 
 
     <EditText
@@ -78,14 +77,15 @@
         android:layout_below="@+id/login_button"
         android:layout_marginTop="10dp"
         android:text="New User Register"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:textAlignment="center"/>
+
     <TextView
         android:id="@+id/forget_password_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_register"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="Forgot Password"
         android:layout_marginBottom="20dp"
         android:textAlignment="center"/>
