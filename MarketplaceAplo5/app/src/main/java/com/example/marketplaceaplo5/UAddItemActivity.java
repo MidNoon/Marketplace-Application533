@@ -65,6 +65,7 @@ public class UAddItemActivity extends AppCompatActivity {
         productImageRef = FirebaseStorage.getInstance().getReference().child("Product Images");
 
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        ProductAddButton.setClickable(true);
 
 
 
